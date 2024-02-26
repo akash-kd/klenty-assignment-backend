@@ -10,7 +10,7 @@ import { Favs } from '../models/favouritesModel.js'
 export const addFavs = asyncHandler(async (req, res) => {
 	try {
 		const { imageid, description, urls, createdBy } = req.body
-		const test = await Favs.find({ imageid })
+		const test = await Favs.find({ imageid, createdBy })
 
 		if (!imageid || !urls || !createdBy) {
 			return res
